@@ -336,7 +336,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 845px) {
     .cert-img {
         gap: 1.5rem;
     }
@@ -344,6 +344,10 @@
     .cert-img img {
         width: 80px;
         height: 80px;
+    }
+
+    .our-team {
+        height: 50vh;
     }
 }
 
@@ -355,6 +359,12 @@
 
 @media (max-width: 374px) {
     .our-team {
-        height: 10vh;
+        height: 100vh;
+    }
+}
+
+@media (max-height: 800px) {
+    .our-team {
+        height: 100vh;
     }
 }
