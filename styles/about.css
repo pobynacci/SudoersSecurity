@@ -19,7 +19,7 @@
 
 .our-team {
     margin: 0;
-    min-height: 70vh;
+    min-height: 60vh;
     display: grid;
     place-content: center;
     place-items: center;
@@ -122,6 +122,12 @@
 @media (hover: none) {
     .co-founder {
         -webkit-tap-highlight-color: transparent;
+    }
+}
+
+@media (max-width: 480px) {
+    .our-team {
+        height: 65vh;
     }
 }
 
@@ -338,5 +344,17 @@
     .cert-img img {
         width: 80px;
         height: 80px;
+    }
+}
+
+@media (max-width: 375px) {
+    .our-team {
+        height: 80vh;
+    }
+}
+
+@media (max-width: 374px) {
+    .our-team {
+        height: 10vh;
     }
 }

@@ -4,21 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sudoers Security</title>
-    <link rel="icon" href="Images/logo.ico" type="images/x-icon"/>
+    <meta name="description" content="Sudoers Security offers expert cybersecurity services including penetration testing, blockchain security, and training to protect your digital assets.">
+    <meta name="keywords" content="cybersecurity, penetration testing, blockchain security, security training, web3 pentest, network security, Sudoers Security">
+    <meta name="author" content="Sudoers Security">
+    <meta name="robots" content="index, follow">
+
+    <meta name="google-site-verification" content="OBCtfgIjxGiSIoBkZ7-pl889UBqle156dNL-7LjsrLk" />
+
+    <meta property="og:title" content="Sudoers Security">
+    <meta property="og:description" content="Protect your business with our enterprise-grade cybersecurity services: penetration testing, blockchain security, and professional training.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pobynacci.github.io/SudoersSecurity">
+    <meta property="og:image" content="https://pobynacci.github.io/SudoersSecurity/Images/logo.png">
+    <meta property="og:site_name" content="Sudoers Security">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@SudoersSec">
+    <meta name="twitter:title" content="Sudoers Security">
+    <meta name="twitter:description" content="Expert cybersecurity services including pentesting, blockchain security, and training.">
+    <meta name="twitter:image" content="https://pobynacci.github.io/SudoersSecurity/Images/logo.png">
+
+    <link rel="icon" href="Images/logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="Images/logo.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="styles/background.css">
     <link rel="stylesheet" href="styles/contact.css">
-    <link rel="stylesheet" href="styles/certification.css">
     <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="styles/loadingScreen.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
+<body>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-container">
+            <span class="loading-text-left">Sudoers</span>
+            <div class="logo-container">
+                <img src="Images/logo.png" alt="logo" class="loading-logo">
+            </div>
+            <span class="loading-text-right">Security</span>
+        </div>
+        <div class="loading-progress">
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+
     <canvas id="background"></canvas>
 
     <nav>
         <div class="nav-container">
-            <div class="logo">SUDOERS SECURITY</div>
+            <div class="logo">
+                <a href="#home"><img src="Images/logo.png" alt="logo-header" class="nav-logo"></a>
+                <a href="#home">SUDOERS SECURITY</a>
+            </div>
             <div class="nav-links">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#services" class="nav-link">Services</a>
@@ -74,7 +116,8 @@
             <div class="modal-content">
                 <div class="description">
                     <h1>CONTACT US</h1>
-                    <h4>Our cybersecurity specialists are ready to assist you. Contact us today to safeguard your business and protect your digital assets.</h4>
+                    <h4>Our cybersecurity specialists are ready to assist you. <br>
+                        To safeguard your business and protect your digital assets, contact us now!</h4>
                 </div>
                 <span class="close-modal">&times;</span>
                 <div class="contact-container">
@@ -180,11 +223,11 @@
                 </div>
                 <div class="service-card">
                     <h3>Mobile App Pentest</h3>
-                    <p>Identify and eliminate security risk in your iOS and Andriod application.</p>
+                    <p>Identify and eliminate security risks in your iOS and Android applications.</p>
                 </div>
                 <div class="service-card">
                     <h3>Web3 Pentest & Smart Contract Audit</h3>
-                    <p>Identify security weakness in your dApps, smart contracts, and blockchain Assests.</p>
+                    <p>Identify security weaknesses in your dApps, smart contracts, and blockchain assets.</p>
                 </div>
                 <div class="service-card">
                     <h3>AI/ML Pentest</h3>
@@ -273,27 +316,32 @@
                     <div class="footer-logo"><img src="Images/logo.png" alt="">Sudoers Security</div>
                     <p class="footer-text">Elevating Protection, Empowering Trust, and Securing Your Digital Future.</p>
                 </div>
-                
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/sudoers-security" target="_blank" class="social-link">
-                        <span class="social-icon"><i class="fab fa-linkedin"></i></span>
-                    </a>
-                    <a href="https://www.facebook.com/sudoers.sec" target="_blank" class="social-link">
-                        <span class="social-icon"><i class="fab fa-facebook"></i></span>
-                    </a>
-                    <a href="https://x.com/sudoerssec" target="_blank" class="social-link">
-                        <span class="social-icon"><i class="fa-brands fa-x-twitter"></i></span>
-                    </a>
-                    <a href="https://discord.gg/sudoerssec" target="_blank" class="social-link">
-                        <span class="social-icon"><i class="fab fa-discord"></i></span>
-                    </a>
-                </div>
-                <div class="footer-form">
-                    <textarea id="message" name="message" placeholder="Send you email" required></textarea>
-                    <button type="submit" class="footer-submit-btn">
-                        <span>Submit</span>
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
+                <div class="footer-right">
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/sudoers-security" target="_blank" class="social-link">
+                            <span class="social-icon"><i class="fab fa-linkedin"></i></span>
+                        </a>
+                        <a href="https://www.facebook.com/sudoers.sec" target="_blank" class="social-link">
+                            <span class="social-icon"><i class="fab fa-facebook"></i></span>
+                        </a>
+                        <a href="https://x.com/sudoerssec" target="_blank" class="social-link">
+                            <span class="social-icon"><i class="fa-brands fa-x-twitter"></i></span>
+                        </a>
+                        <a href="https://discord.gg/sudoerssec" target="_blank" class="social-link">
+                            <span class="social-icon"><i class="fab fa-discord"></i></span>
+                        </a>
+                    </div>
+                    <div class="newsletter-section">
+                        <h4 class="newsletter-title">INTERESTED IN MORE?</h4>
+                        <p class="newsletter-text">Sign up for our newsletter and stay up to date on all Sudoers Security news.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="EMAIL ADDRESS" required class="newsletter-input">
+                            <button type="submit" class="newsletter-submit">
+                                SUBMIT
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
             
@@ -311,5 +359,6 @@
 <script src="Js/background.js"></script>
 <script src="Js/carousel.js"></script>
 <script src="Js/contact.js"></script>
+<script src="Js/loadingScreen.js"></script>
 </body>
 </html>
