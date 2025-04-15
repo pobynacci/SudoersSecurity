@@ -259,9 +259,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     contactLink.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent default anchor behavior
-        modal.style.display = 'block'; // Show the modal
-        mobileMenu.classList.remove('active'); // Close mobile menu
+        e.preventDefault();
+        modal.style.display = 'block';
+        mobileMenu.classList.remove('active');
         mobileMenuBtn.classList.remove('active');
         document.body.classList.remove('menu-open');
     });

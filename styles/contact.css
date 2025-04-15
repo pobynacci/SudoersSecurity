@@ -1,7 +1,5 @@
-/* contact.css - Complete Responsive Version */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
-/* Base Styles */
 .modal {
     display: none;
     position: fixed;
@@ -10,7 +8,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(7, 7, 8, 0.95);
-    z-index: 1000;
+    z-index: 1002;
     backdrop-filter: blur(3px);
     overflow-y: auto;
     padding: 20px 0;
@@ -181,6 +179,22 @@
     box-shadow: 0 0 15px var(--neon-blue);
 }
 
+.form-message {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.form-message.success {
+    color: var(--neon-green);
+    text-shadow: 0 0 5px var(--neon-green);
+}
+
+.form-message.error {
+    color: var(--neon-purple);
+    text-shadow: 0 0 5px var(--neon-purple);
+}
+
 /* Responsive Breakpoints */
 @media (max-width: 1200px) {
     .contact-container {
@@ -224,6 +238,10 @@
 
     .form-group {
         margin: 1.2rem 0;
+    }
+
+    .form-message {
+        font-size: 0.9rem;
     }
 }
 

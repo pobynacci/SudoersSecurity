@@ -31,10 +31,14 @@
     <link rel="stylesheet" href="styles/contact.css">
     <link rel="stylesheet" href="styles/about.css">
     <link rel="stylesheet" href="styles/loadingScreen.css">
+    <link rel="stylesheet" href="styles/serviceModal.css">
+    <link rel="stylesheet" href="styles/testimonial.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript"></script>
 </head>
 <body>
 <body>
@@ -66,7 +70,7 @@
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#about-us" class="nav-link">About Us</a>
                 <a href="#certifications" class="nav-link">certifications</a>
-                <a href="#contactModal" class="nav-link nav-contact">Contact Us</a>
+                <a href="#contactModal" class="nav-link nav-contact">Contact</a>
                 <button id="theme-toggle" class="nav-link" aria-label="Toggle theme">
                     <span class="icon">🌙</span>
                 </button>
@@ -128,7 +132,7 @@
                                 <i class="fas fa-envelope"></i>
                                 <div>
                                     <h3>Email</h3>
-                                    <p>sudoers.sec@gmail.com</p>
+                                    <p>marketing@sudoers-sec.com</p>
                                 </div>
                             </div>
                             
@@ -195,6 +199,7 @@
                         </form>
                     </div>
                 </div>
+                <div id="formMessage" class="form-message"></div>
             </div>
         </div>
 
@@ -208,50 +213,195 @@
                     <img src="Images/trusted3.png" alt="Client 3">
                     <img src="Images/trusted4.png" alt="Client 4">
                     <img src="Images/trusted5.png" alt="Client 5">
-
+                    <img src="Images/trusted6.png" alt="Client 6">
                 </div>
             </div>
         </section>
+
 
         <!-- Services Section -->
         <section id="services" class="services">
-            <h2>Our Services</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>Web App Pentest</h3>
-                    <p>Uncover vulnerabilities in your web application and API services.</p>
+            <div class="services-container">
+                <h2 class="section-title">Our Services</h2>
+                <p class="services-intro">Comprehensive security solutions to protect your digital assets</p>
+                
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="Images/web3-pentest.gif" alt="Web3 and Smart Contract Security Audit">
+                        </div>
+                        <div class="service-header">
+                            <div class="icon-container">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <h3>Web3 Pentest</h3>
+                        </div>
+                        <p>Identify vulnerabilities in dApps, and blockchain ecosystems to help strengthen the security of decentralized applications.</p>
+                        <div class="service-overlay"><span>More Details</span></div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="Images/Smart-Contract-Audit.gif" alt="Smart Contract">
+                        </div>
+                        <div class="service-header">
+                            <div class="icon-container">
+                                <i class="fas fa-file-contract"></i>
+                            </div>
+                            <h3>Smart Contract Audit</h3>
+                        </div>
+                        <p>Ensure the security and reliability of your smart contracts with comprehensive code reviews and vulnerability assessments.</p>
+                        <div class="service-overlay"><span>More Details</span></div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="Images/web-pentest.gif" alt="Web Application Penetration Testing">
+                        </div>
+                        <div class="service-header">
+                            <div class="icon-container">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3>Web App Pentest</h3>
+                        </div>
+                        <p>Uncover vulnerabilities in your web applications and APIs. Our testing methodology ensures your online platforms are secure against modern threats.</p>
+                        <div class="service-overlay"><span>More Details</span></div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="Images/Mobile-pentest.gif" alt="Mobile Application Penetration Testing">
+                        </div>
+                        <div class="service-header">
+                            <div class="icon-container">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3>Mobile App Pentest</h3>
+                        </div>
+                        <p>Identify and eliminate security risks in iOS and Android apps. We test for insecure storage, data leaks, and platform-specific vulnerabilities.</p>
+                        <div class="service-overlay"><span>More Details</span></div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="Images/Vul-Scanning.gif" alt="Vulnerability Scanning">
+                        </div>
+                        <div class="service-header">
+                            <div class="icon-container">
+                                <i class="fas fa-magnifying-glass"></i>
+                            </div>
+                            <h3>Vulnerability Scanning</h3>
+                        </div>
+                        <p>Identify security flaws across your digital assets with automated scanning and expert analysis to prioritize risk mitigation.</p>
+                        <div class="service-overlay"><span>More Details</span></div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="Images/AI-pentest.gif" alt="AI/ML Penetration Testing">
+                        </div>
+                        <div class="service-header">
+                            <div class="icon-container">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>AI/ML Pentest</h3>
+                        </div>
+                        <p>Assess the security of AI models, detecting adversarial attacks, data leaks, and extraction risks to safeguard your machine learning systems.</p>
+                        <div class="service-overlay"><span>More Details</span></div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="Images/Network-pentest.gif" alt="Network Penetration Testing">
+                        </div>
+                        <div class="service-header">
+                            <div class="icon-container">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h3>Network Pentest</h3>
+                        </div>
+                        <p>Identify the security gaps in your internal and external networks. Our testing helps detect potential threats and strengthen defenses.</p>
+                        <div class="service-overlay"><span>More Details</span></div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="Images/AD-pentest.gif" alt="Active Directory Penetration Testing">
+                        </div>
+                        <div class="service-header">
+                            <div class="icon-container">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3>Active Directory Pentest</h3>
+                        </div>
+                        <p>Evaluate the security of your AD environment by simulating real-world attacks to identify misconfigurations, privilege escalation paths, and weaknesses in domain controls.</p>
+                        <div class="service-overlay"><span>More Details</span></div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="Images/Phising-Simulation.gif" alt="Phishing Simulation">
+                        </div>
+                        <div class="service-header">
+                            <div class="icon-container">
+                                <i class="fas fa-anchor"></i>
+                            </div>
+                            <h3>Phishing Simulation</h3>
+                        </div>
+                        <p>Evaluate your organization's resilience to social engineering attacks by simulating realistic phishing campaigns to identify human vulnerabilities and improve employee awareness.</p>
+                        <div class="service-overlay"><span>More Details</span></div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="Images/Training.gif" alt="Security Training & Awareness">
+                        </div>
+                        <div class="service-header">
+                            <div class="icon-container">
+                                <i class="fas fa-users-cog"></i>
+                            </div>
+                            <h3>Training & Awareness Programs</h3>
+                        </div>
+                        <p>Training and Awareness services help your organization build a strong security culture by educating employees on cyber threats, safe practices, and incident response through engaging, role-based content.</p>
+                        <div class="service-overlay"><span>More Details</span></div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="Images/Technical-assessment.gif" alt="Technical Security Consultant">
+                        </div>
+                        <div class="service-header">
+                            <div class="icon-container">
+                                <i class="fas fa-shield"></i>
+                            </div>
+                            <h3>Technical Security Consultant</h3>
+                        </div>
+                        <p>Leverage expert security consulting to assess risks, design secure architectures, and implement best-in-class defense strategies.</p>
+                        <div class="service-overlay"><span>More Details</span></div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <h3>Mobile App Pentest</h3>
-                    <p>Identify and eliminate security risks in your iOS and Android applications.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Web3 Pentest & Smart Contract Audit</h3>
-                    <p>Identify security weaknesses in your dApps, smart contracts, and blockchain assets.</p>
-                </div>
-                <div class="service-card">
-                    <h3>AI/ML Pentest</h3>
-                    <p>Specialized pentesting for AI model, focusing on adversarial attacks, data privacy and model extraction risks.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Network Pentest</h3>
-                    <p>Identify and address security vulnerabilities in your internal and external networks. Our comprehensive penetration testing services help detect potential threats, strengthen your defenses, and ensure your systems are protected against cyber attacks.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Active Directory Pentest</h3>
-                    <p>Identify vulnerabilities and misconfigurations within your Active Directory to prevent potential compromise of your entire domain and safeguard your infrastructure.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Phishing Simulation</h3>
-                    <p>Test your team's ability to recognize phishing attacks through realistic simulation, helping to improve awareness, reduce vulnerabilities, and enhance your organization's overall security posture.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Training & Awareness Programs</h3>
-                    <p>Empower your team to identify cyber threats, adopt best security practices, and build a strong security culture within your organization.</p>
+                
+                <div class="cta-container">
+                    <a href="#contact" class="service-button">
+                        <span>Get a Security Assessment</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </section>
 
+        <!--Modal Services-->
+        <div id="service-modal" class="service-modal">
+            <div class="service-modal-content">
+                <span class="service-close-modal">&times;</span>
+                <h2 id="service-modal-title"></h2>
+                <div id="service-modal-image"></div>
+                <div id="service-modal-description"></div>
+                <a href="#contact" class="service-modal-cta">Get an Assessment?</a>
+            </div>
+        </div>
+
+        <!--About Us Section-->
         <section id="about-us" class="about-us">
             <h2>About Us</h2>
             <div class="about-container">
@@ -259,50 +409,408 @@
                     <p>At Sudoers Security, we specialize in penetration testing, blockchain security, and professional security training to help businesses stay ahead of emerging cyber threats. Our proactive approach focuses on uncovering vulnerabilities early, strengthening your defenses, and ensuring compliance with security standards.</p>
                 </div>
             </div>
-            <br>
-            <br>
+            
             <h2>Our Team</h2>
             <div class="our-team">
-                <div class="co-founder">
-                    <a href="https://x.com/0xSty_" target="_blank"><img src="Images/oxsty.png" alt="" class="co-founder-img"></a>
-                    <div class="co-founder-overlay">
-                        <p>OxSty_</p>
-                        <h3>Co-Founder</h3>
+                <div class="team-container">
+                    <div class="co-founder" onclick="this.classList.toggle('flipped')">
+                        <div class="co-founder-front">
+                            <img src="Images/oxsty.png" alt="OxSty_" class="co-founder-img">
+                            <div class="co-founder-overlay">
+                                <p>OxSty_</p>
+                                <h3>Co-Founder</h3>
+                            </div>
+                        </div>
+                        <div class="co-founder-back">
+                            <h4>OxSty_</h4>
+                            <p></p>
+                            <p></p>
+                            <div class="social-icons">
+                                <a href="https://x.com/0xSty_" target="_blank">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="co-founder">
-                    <a href="https://x.com/pobynacci" target="_blank"><img src="Images/Pobynacci.png" alt="" class="co-founder-img"></a>
-                    <div class="co-founder-overlay">
-                        <p>Pobynacci</p>
-                        <h3>Co-Founder</h3>
+
+                    <div class="co-founder" onclick="this.classList.toggle('flipped')">
+                        <div class="co-founder-front">
+                            <img src="Images/Pobynacci.png" alt="Pobynacci" class="co-founder-img">
+                            <div class="co-founder-overlay">
+                                <p>Pobynacci</p>
+                                <h3>Co-Founder</h3>
+                            </div>
+                        </div>
+                        <div class="co-founder-back">
+                            <h4>Pobynacci</h4>
+                            <p></p>
+                            <p></p>
+                            <div class="social-icons">
+                                <a href="https://x.com/pobynacci" target="_blank">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="co-founder">
-                    <a href="https://x.com/coxxect1337" target="_blank"><img src="Images/coxxect1337.png" alt="" class="co-founder-img"></a>
-                    <div class="co-founder-overlay">
-                        <p>Coxxect1337</p>
-                        <h3>Co-Founder</h3>
+
+                    <div class="co-founder" onclick="this.classList.toggle('flipped')">
+                        <div class="co-founder-front">
+                            <img src="Images/coxxect1337.png" alt="Coxxect1337" class="co-founder-img">
+                            <div class="co-founder-overlay">
+                                <p>Coxxect1337</p>
+                                <h3>Co-Founder</h3>
+                            </div>
+                        </div>
+                        <div class="co-founder-back">
+                            <h4>Coxxect1337</h4>
+                            <p></p>
+                            <p></p>
+                            <div class="social-icons">
+                                <a href="https://x.com/coxxect1337" target="_blank">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="co-founder">
-                    <a href="#" target="_blank"><img src="Images/ryuk.png" alt="" class="co-founder-img"></a>
-                    <div class="co-founder-overlay">
-                        <p>Ryuk</p>
-                        <h3>Co-Founder</h3>
+
+                    <div class="co-founder" onclick="this.classList.toggle('flipped')">
+                        <div class="co-founder-front">
+                            <img src="Images/ryuk.png" alt="Ryuk" class="co-founder-img">
+                            <div class="co-founder-overlay">
+                                <p>Ryuk</p>
+                                <h3>Co-Founder</h3>
+                            </div>
+                        </div>
+                        <div class="co-founder-back">
+                            <h4>Ryuk</h4>
+                            <p></p>
+                            <p></p>
+                            <div class="social-icons">
+                                <a href="#" target="_blank">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="co-founder" onclick="this.classList.toggle('flipped')">
+                        <div class="co-founder-front">
+                            <img src="Images/Ritchie.png" alt="Ritchie" class="co-founder-img">
+                            <div class="co-founder-overlay">
+                                <p>Ritchie</p>
+                            </div>
+                        </div>
+                        <div class="co-founder-back">
+                            <h4>Ritchie</h4>
+                            <p>Sales and Marketing</p>
+                            <p></p>
+                            <div class="social-icons">
+                                <a href="https://x.com/orionbergom" target="_blank">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="co-founder" onclick="this.classList.toggle('flipped')">
+                        <div class="co-founder-front">
+                            <img src="Images/Arasquared.png" alt="Arasquared" class="co-founder-img">
+                            <div class="co-founder-overlay">
+                                <p>Arasquared</p>
+                                <h3> </h3>
+                            </div>
+                        </div>
+                        <div class="co-founder-back">
+                            <h4>Arasquared</h4>
+                            <p>Sales and Marketing</p>
+                            <p></p>
+                            <div class="social-icons">
+                                <a href="https://x.com/ara_squared" target="_blank">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!--Certification-->
             <div id="certifications" class="certifications">
-                <h2>CERTIFICATIONS</h2>
-                <div class="cert-img">
-                    <img src="Images/oscp.png" alt="">
-                    <img src="Images/GWAPT.png" alt="">
-                    <img src="Images/GPEN.png" alt="">
-                    <img src="Images/cbbh.png" alt="">
-                    <img src="Images/ewpt.png" alt="">
-                    <img src="Images/oswp.png" alt="">
-                    <img src="Images/cnpen.png" alt="">
-                    <img src="Images/AIML.png" alt="">
+                <h2>OUR CERTIFICATIONS</h2>
+                <div class="certification-container">
+                    <div class="certification-description">
+                        <p>Our team holds industry-leading cybersecurity certifications, demonstrating our expertise and commitment to maintaining the highest standards in security practices. These qualifications enable us to deliver exceptional security services across various domains.</p>
+                    </div>
+                </div>
+                <div class="cert-container">
+                    <div class="cert-img">
+                        <div class="cert-item">
+                            <img src="Images/oscp.png" alt="OSCP">
+                            <div class="cert-tooltip">Offensive Security <br>Certified Professional</div>
+                        </div>
+                        <div class="cert-item">
+                            <img src="Images/GWAPT.png" alt="GWAPT">
+                            <div class="cert-tooltip">GIAC Web Application <br>Penetration Tester</div>
+                        </div>
+                        <div class="cert-item">
+                            <img src="Images/GPEN.png" alt="GPEN">
+                            <div class="cert-tooltip">GIAC Penetration Tester</div>
+                        </div>
+                        <div class="cert-item">
+                            <img src="Images/cbbh.png" alt="CBBH">
+                            <div class="cert-tooltip">Certified Bug Bounty Hunter</div>
+                        </div>
+                        <div class="cert-item">
+                            <img src="Images/ewpt.png" alt="EWPT">
+                            <div class="cert-tooltip">eLearnSecurity Web Application <br>Penetration Tester</div>
+                        </div>
+                        <div class="cert-item">
+                            <img src="Images/oswp.png" alt="OSWP">
+                            <div class="cert-tooltip">Offensive Security <br>Wireless Professional</div>
+                        </div>
+                        <div class="cert-item">
+                            <img src="Images/cnpen.png" alt="CNPEN">
+                            <div class="cert-tooltip">Certified Network <br>Penetration Tester</div>
+                        </div>
+                        <div class="cert-item">
+                            <img src="Images/AIML.png" alt="AIML">
+                            <div class="cert-tooltip">AI Machine Learning Certification</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--Testemonial Section-->
+        <section class="testimonials">
+            <h2>Feedback & Reviews</h2>
+            
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <a href="https://x.com/n1vvSec" target="_blank">
+                                    <img src="Images/Calvin-Review.jpg" alt="Client Avatar">
+                                </a>
+                            </div>
+                            <div class="author-info">
+                                <a href="https://x.com/n1vvSec" target="_blank">
+                                    <h4>Calvin Rivarez</h4>
+                                </a>
+                                <p>Digital Forensic</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>I was impressed by these guys strong knowledge in addressing potential cybersecurity threats. Their ability to clearly explain complex security concepts and educate the listeners was highly valuable. They are clearly knowledgeable, and I recommend them for their expertise in this critical area.</p>
+                        </div>
+                    </div>
+    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <a href="https://x.com/sleepbuildrun" target="_blank">
+                                    <img src="Images/Mark-Review.jpg" alt="Client Avatar">
+                                </a>
+                            </div>
+                            <div class="author-info">
+                                <a href="https://x.com/sleepbuildrun" target="_blank">
+                                    <h4>Mark Hugh Neri</h4>
+                                </a>
+                                <p>CTO of The BLOKC (Blocklabs Inc.)</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>Would vouch for Sudoers Security in terms of knowledge and expertise.
+                                These guys are experts on their craft. Highly recommended!</p>
+                        </div>
+                    </div>
+
+
+                    
+                    <!-- Duplicate first 6 testimonials to create seamless loop -->
+                    <!-- Testimonial 1 -->
+
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <a href="https://x.com/n1vvSec" target="_blank">
+                                    <img src="Images/Calvin-Review.jpg" alt="Client Avatar">
+                                </a>
+                            </div>
+                            <div class="author-info">
+                                <a href="https://x.com/n1vvSec" target="_blank">
+                                    <h4>Calvin Rivarez</h4>
+                                </a>
+                                <p>Digital Forensic</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>I was impressed by these guys strong knowledge in addressing potential cybersecurity threats. Their ability to clearly explain complex security concepts and educate the listeners was highly valuable. They are clearly knowledgeable, and I recommend them for their expertise in this critical area.</p>
+                        </div>
+                    </div>
+    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <a href="https://x.com/sleepbuildrun" target="_blank">
+                                    <img src="Images/Mark-Review.jpg" alt="Client Avatar">
+                                </a>
+                            </div>
+                            <div class="author-info">
+                                <a href="https://x.com/sleepbuildrun" target="_blank">
+                                    <h4>Mark Hugh Neri</h4>
+                                </a>
+                                <p>CTO of The BLOKC (Blocklabs Inc.)</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>Would vouch for Sudoers Security in terms of knowledge and expertise.
+                                These guys are experts on their craft. Highly recommended!</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <a href="https://x.com/n1vvSec" target="_blank">
+                                    <img src="Images/Calvin-Review.jpg" alt="Client Avatar">
+                                </a>
+                            </div>
+                            <div class="author-info">
+                                <a href="https://x.com/n1vvSec" target="_blank">
+                                    <h4>Calvin Rivarez</h4>
+                                </a>
+                                <p>Digital Forensic</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>I was impressed by these guys strong knowledge in addressing potential cybersecurity threats. Their ability to clearly explain complex security concepts and educate the listeners was highly valuable. They are clearly knowledgeable, and I recommend them for their expertise in this critical area.</p>
+                        </div>
+                    </div>
+    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <a href="https://x.com/sleepbuildrun" target="_blank">
+                                    <img src="Images/Mark-Review.jpg" alt="Client Avatar">
+                                </a>
+                            </div>
+                            <div class="author-info">
+                                <a href="https://x.com/sleepbuildrun" target="_blank">
+                                    <h4>Mark Hugh Neri</h4>
+                                </a>
+                                <p>CTO of The BLOKC (Blocklabs Inc.)</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>Would vouch for Sudoers Security in terms of knowledge and expertise.
+                                These guys are experts on their craft. Highly recommended!</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <a href="https://x.com/n1vvSec" target="_blank">
+                                    <img src="Images/Calvin-Review.jpg" alt="Client Avatar">
+                                </a>
+                            </div>
+                            <div class="author-info">
+                                <a href="https://x.com/n1vvSec" target="_blank">
+                                    <h4>Calvin Rivarez</h4>
+                                </a>
+                                <p>Digital Forensic</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>I was impressed by these guys strong knowledge in addressing potential cybersecurity threats. Their ability to clearly explain complex security concepts and educate the listeners was highly valuable. They are clearly knowledgeable, and I recommend them for their expertise in this critical area.</p>
+                        </div>
+                    </div>
+    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <a href="https://x.com/sleepbuildrun" target="_blank">
+                                    <img src="Images/Mark-Review.jpg" alt="Client Avatar">
+                                </a>
+                            </div>
+                            <div class="author-info">
+                                <a href="https://x.com/sleepbuildrun" target="_blank">
+                                    <h4>Mark Hugh Neri</h4>
+                                </a>
+                                <p>CTO of The BLOKC (Blocklabs Inc.)</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>Would vouch for Sudoers Security in terms of knowledge and expertise.
+                                These guys are experts on their craft. Highly recommended!</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -347,10 +855,10 @@
             
             <div class="copyright">
                 <p>© 2025 Sudoers Security. All rights reserved.</p>
-                <div class="footer-links">
+                <!--<div class="footer-links">
                     <a href="#privacy">Privacy Policy</a>
                     <a href="#terms">Terms of Service</a>
-                </div>
+                </div>-->
             </div>
         </div>
     </footer>
@@ -360,5 +868,8 @@
 <script src="Js/carousel.js"></script>
 <script src="Js/contact.js"></script>
 <script src="Js/loadingScreen.js"></script>
+<script src="Js/serviceModal.js"></script>
+<script src="Js/about.js"></script>
+<script src="Js/testimonial.js"></script>
 </body>
 </html>

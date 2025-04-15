@@ -24,7 +24,7 @@
 .loading-text-left,
 .loading-text-right {
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: bolder;
     text-transform: uppercase;
     letter-spacing: 6px;
     background: linear-gradient(90deg, var(--neon-teal), var(--neon-blue));
